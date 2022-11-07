@@ -15,6 +15,7 @@ return new class extends Migration
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('medical_examination_id')->constrained();
             $table->timestamps();
         });
     }

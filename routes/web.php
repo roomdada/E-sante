@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ConsultationsController;
+use App\Http\Controllers\MedicalBookletsController;
+use App\Http\Controllers\MedicalExaminationsController;
+use App\Http\Controllers\PrescriptionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,12 +19,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::redirect('/', 'login');
+
+Route::middleware('auth')->prefix('dashboard')->group(function(){
+  Route::get('', DashboardController::class)->name('dashboard');
+  Route::resource('utilisateurs', UsersController::class);
+  Route::resource('carnets', MedicalBookletsController::class);
+  Route::resource('consultations', ConsultationsController::class);
+  Route::resource('examen-medical', MedicalExaminationsController::class);
+  Route::resource('ordonnances', PrescriptionsController::class);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 require __DIR__.'/auth.php';
