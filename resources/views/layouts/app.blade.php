@@ -21,7 +21,7 @@
     @stack('scripts')
 </head>
 
-<body class="antialiased">
+<body class="antialiased font-sans">
     <div class="min-h-screen bg-gray-100">
         @include('layouts.navigation')
 

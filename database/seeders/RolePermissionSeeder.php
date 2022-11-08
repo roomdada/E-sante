@@ -178,6 +178,23 @@ class RolePermissionSeeder extends Seeder
 
     $admin->assignRole(Role::SUPER_ADMIN);
 
+    Role::create([
+      'id' => Role::PATIENT,
+      'name' => 'Patient'
+    ]);
+
+    Role::create([
+      'id' => Role::DOCTOR,
+      'name' => 'Mœdecin'
+    ]);
+
+    Role::create([
+      'id' => Role::NURSE,
+      'name' => 'Infirmier'
+    ]);
+
+
+
 
   }
 }

@@ -21,12 +21,13 @@ return new class extends Migration
             $table->string('full_name')->virtualAs('CONCAT(first_name, " ", last_name)');
             $table->string('contact')->nullable();
             $table->string('email')->unique()->nullable();
-            $table->string('photo')->nullable();
             $table->integer('parent_id')->index()->nullable();
             $table->string('occupation')->nullable();
             $table->string('location')->nullable();
+            $table->string('gender')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password');
+            $table->timestamp('birthday_at')->nullable();
+            $table->string('password')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

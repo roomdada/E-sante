@@ -14,7 +14,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        return view('user.index');
     }
 
     /**
@@ -24,19 +24,9 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+        return view('user.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -46,7 +36,7 @@ class UsersController extends Controller
      */
     public function show(User $user)
     {
-        //
+        return view('user.show', compact('user'));
     }
 
     /**
@@ -55,31 +45,9 @@ class UsersController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(User $patient)
     {
-        //
+      return view('user.edit', compact('patient'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, User $user)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\User  $user
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(User $user)
-    {
-        //
-    }
 }

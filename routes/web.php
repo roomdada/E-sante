@@ -23,7 +23,7 @@ Route::redirect('/', 'login');
 
 Route::middleware('auth')->prefix('dashboard')->group(function(){
   Route::get('', DashboardController::class)->name('dashboard');
-  Route::resource('utilisateurs', UsersController::class);
+  Route::resource('patients', UsersController::class);
   Route::resource('carnets', MedicalBookletsController::class);
   Route::resource('consultations', ConsultationsController::class);
   Route::resource('examen-medical', MedicalExaminationsController::class);
