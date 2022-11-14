@@ -10,4 +10,11 @@ class MedicalBooklet extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function consultations()
+    {
+        return $this->hasMany(Consultation::class);
+    }
+
+    
 }

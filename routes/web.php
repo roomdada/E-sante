@@ -2,11 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsersController;
+use App\Http\Controllers\DoctorsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\SuggestionsController;
+use App\Http\Controllers\AppointmentsController;
 use App\Http\Controllers\ConsultationsController;
+use App\Http\Controllers\PrescriptionsController;
 use App\Http\Controllers\MedicalBookletsController;
 use App\Http\Controllers\MedicalExaminationsController;
-use App\Http\Controllers\PrescriptionsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +31,9 @@ Route::middleware('auth')->prefix('dashboard')->group(function(){
   Route::resource('consultations', ConsultationsController::class);
   Route::resource('examen-medical', MedicalExaminationsController::class);
   Route::resource('ordonnances', PrescriptionsController::class);
+  Route::resource('rendez-vous', AppointmentsController::class);
+  Route::resource('medecins', DoctorsController::class);
+  Route::resource('suggestions', SuggestionsController::class);
 });
 
 

@@ -27,6 +27,6 @@ class CreatePatientMedicalBooklet
      */
     public function handle(PatientCreated $event)
     {
-        MedicalBooklet::create(['identifier' => 'CA0000'. $event->user->id, 'user_id' => $event->user->id]);
+        MedicalBooklet::create(['identifier' => 'CARSANTE0000'. $event->user->id, 'user_id' => $event->user->id]);
     }
 }
